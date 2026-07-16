@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Academic Hub — Sankalp, BITS Pilani Hyderabad</title>
+<meta name="description" content="Study resource directory for BITS Pilani Hyderabad Campus — PYQs, lectures, tutorials, quizzes and more, by department and course. Maintained by Sankalp." />
+<link rel="icon" type="image/png" href="sankalp-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" id="homeLink">
+        <img class="brand-emblem" src="sankalp-logo.png" alt="Sankalp emblem" />
+        <span class="brand-text">
+          <span class="brand-title">Academic Hub</span>
+          <span class="brand-sub">Sankalp · BITS Pilani, Hyderabad Campus</span>
+        </span>
+      </a>
+
+      <div class="header-controls">
+        <button class="search-trigger" id="searchTrigger" aria-label="Search (Ctrl+K)">
+          <span class="st-icon">⌕</span>
+          <span class="st-label">Search PYQs, lectures, quizzes…</span>
+          <span class="st-kbd">Ctrl K</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="frame-strip" aria-hidden="true"></div>
+  </header>
+
+  <div id="statsBar" class="stats-bar"></div>
+
+  <main id="main">
+    <nav id="breadcrumb" class="breadcrumb hidden" aria-label="Breadcrumb"></nav>
+    <div id="viewRoot"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="frame-strip" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-emblem" src="sankalp-logo.png" alt="Sankalp emblem" />
+        <span class="footer-wordmark">SANKALP</span>
+      </div>
+      <p class="footer-text">
+        Maintained by <strong>Sankalp</strong> — Society for Awareness of National Issues
+        and Knowledge of Administration, Law and Policy.
+      </p>
+      <p class="footer-motto">संकल्पः शक्तेः मूलम्<span class="footer-motto-en">Resolution is the root of power.</span></p>
+      <p class="footer-sub">Content lives on Google Drive · Missing your course? It's being added — check back soon.</p>
+    </div>
+  </footer>
+
+  <!-- Command palette overlay -->
+  <div id="palette" class="palette hidden" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="palette-backdrop" id="paletteBackdrop"></div>
+    <div class="palette-box">
+      <div class="palette-input-row">
+        <span class="pi-icon">⌕</span>
+        <input id="paletteInput" type="text" placeholder="Try “quiz”, “A2 quiz”, or “fluid mechanics quiz”…" autocomplete="off" />
+        <span class="pi-esc">Esc</span>
+      </div>
+      <div id="paletteResults" class="palette-results"></div>
+    </div>
+  </div>
+
+  <!-- Link preview modal -->
+  <div id="previewModal" class="palette hidden" role="dialog" aria-modal="true" aria-label="Open drive link">
+    <div class="palette-backdrop" id="previewBackdrop"></div>
+    <div class="preview-box">
+      <div class="preview-path" id="previewPath"></div>
+      <div class="preview-name" id="previewName"></div>
+      <div class="preview-actions">
+        <a id="previewOpenBtn" class="drive-btn" target="_blank" rel="noopener noreferrer">Open in Google Drive ↗</a>
+        <button id="previewCopyBtn" class="copy-btn" type="button">Copy link</button>
+        <button id="previewCloseBtn" class="close-btn" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
